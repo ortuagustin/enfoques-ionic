@@ -1,29 +1,22 @@
 <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-    <ion-navbar>
-      <ion-title>Home</ion-title>
-    </ion-navbar>
+<ion-content padding>
+  <div class="container">
+    <ion-icon name="sunny" class="sun-icon"></ion-icon>
+    <div class="title">Brillo</div>
+    <div class="value">{{brightnessValue}}%</div>
+  </div>
 
-  </ion-header>
-
-    <ion-content class="card-background-page">
-
-      <ion-card>
-        <img [src]="iosImage"/>
-        <div class="card-title">{{ iosTitle }}</div>
-        <div class="card-subtitle">{{ iosSubtitle }}</div>
-      </ion-card>
-
-      <ion-card>
-        <img [src]="androidImage"/>
-        <div class="card-title">{{ androidTitle }}</div>
-        <div class="card-subtitle">{{ androidSubtitle }}</div>
-      </ion-card>
-
-      <ion-card>
-        <img [src]="windowsImage"/>
-        <div class="card-title">{{ windowsTitle }}</div>
-        <div class="card-subtitle">{{ windowsSubtitle }}</div>
-      </ion-card>
-
-    </ion-content>
+  <ion-item>
+    <ion-range [(ngModel)]="brightnessValue" (ionChange)="changeBrightnessLevel()">
+      <ion-icon range-left small name="sunny"></ion-icon>
+      <ion-icon range-right name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
+</ion-content>
